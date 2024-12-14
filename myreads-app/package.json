@@ -1,16 +1,31 @@
 {
   "name": "myreads",
   "version": "0.1.0",
+  "description": "A bookshelf app that allows you to search for and categorize books you have read, are currently reading, or want to read.",
+  "keywords": [
+    "udacity",
+    "react",
+    "myreads"
+  ],
   "private": true,
-  "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^4.2.4"
+  "author": "Eric Slutz",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eslutz/Udacity-React-Fundamentals-MyReads.git"
+  },
+  "bugs": {
+    "url": "https://github.com/eslutz/Udacity-React-Fundamentals-MyReads/issues"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build"
+  },
+  "dependencies": {
+    "prop-types": "^15.8.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.0.2",
+    "react-scripts": "5.0.1"
   },
   "eslintConfig": {
     "extends": [
@@ -28,5 +43,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "engines": {
+    "node": ">=14.0.0"
   }
 }

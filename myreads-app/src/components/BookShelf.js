@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import Book from "./Book";
 
 /**
- * Component representing a bookshelf.
+ * Bookshelf component that displays the books on a shelf.
  *
  * @param {Object} props - The component props.
  * @param {string} props.title - The title of the bookshelf.

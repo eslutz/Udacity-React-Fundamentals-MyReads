@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 /**
- * Component to allow the selection of a bookshelf for a book.
+ * BookShelfPicker component that allows the selection of a shelf for a book.
  *
  * @param {Object} props - The component props.
  * @param {string} props.currentBookShelf - The current bookshelf of the book.

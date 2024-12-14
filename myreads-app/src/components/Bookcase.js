@@ -2,6 +2,15 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import BookShelf from "./BookShelf";
 
+/**
+ * Bookcase component that displays books organized into different shelves.
+ *
+ * @param {Object} props - The component props.
+ * @param {Array} props.books - The array of book objects to be displayed.
+ * @param {Function} props.updateBookShelf - The function to update the shelf of a book.
+ *
+ * @returns {JSX.Element} The rendered Bookcase component.
+ */
 const Bookcase = ({ books, updateBookShelf }) => {
   // Define the shelves.
   const shelves = [

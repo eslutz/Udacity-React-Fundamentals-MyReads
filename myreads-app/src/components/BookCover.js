@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 /**
- * Component to display the cover of a book.
+ * BookCover component that displays the cover of a book.
  *
  * @param {Object} props - The properties object.
  * @param {Object} props.imageLinks - The image links object containing URLs for the book's images.

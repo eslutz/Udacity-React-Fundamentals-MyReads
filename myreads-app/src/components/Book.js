@@ -8,7 +8,7 @@ const DEFAULT_TITLE = "No Title Available";
 const DEFAULT_AUTHOR = "Unknown Author";
 
 /**
- * Component representing a book.
+ * Book component that displays the book details.
  *
  * @param {Object} props - The component props.
  * @param {Object} props.book - The book object.

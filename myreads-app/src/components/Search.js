@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
-import Book from "./Book";
-import * as BooksAPI from "../utilities/BooksAPI";
+import {useEffect, useState} from 'react';
+import {Link} from 'react-router-dom';
+import PropTypes from 'prop-types';
+import Book from './Book';
+import * as BooksAPI from '../utilities/BooksAPI';
 
 /**
  * Component for searching books and displaying search results.
@@ -13,9 +13,9 @@ import * as BooksAPI from "../utilities/BooksAPI";
  *
  * @returns {JSX.Element} The search component.
  */
-const Search = ({ books, updateBookShelf }) => {
+const Search = ({books, updateBookShelf}) => {
   // State to store the search query.
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState('');
   // State to store the search results.
   const [searchResults, setSearchResults] = useState([]);
 
@@ -36,13 +36,13 @@ const Search = ({ books, updateBookShelf }) => {
           // If a search result is already in the library, set its shelf to the shelf of the book.
           searchResults.forEach((searchResult) => {
             const book = books.find((book) => book.id === searchResult.id);
-            searchResult.shelf = book ? book.shelf : "none";
+            searchResult.shelf = book ? book.shelf : 'none';
           });
 
           // Set the search results.
           setSearchResults(searchResults);
         } catch (error) {
-          console.error("Error fetching search results:", error);
+          console.error('Error fetching search results:', error);
         }
       } else {
         setSearchResults([]);
@@ -55,7 +55,10 @@ const Search = ({ books, updateBookShelf }) => {
   return (
     <div className="search-books">
       <div className="search-books-bar">
-        <Link className="close-search" to="/">
+        <Link
+          className="close-search"
+          to="/"
+        >
           Close
         </Link>
         <div className="search-books-input-wrapper">
@@ -70,7 +73,10 @@ const Search = ({ books, updateBookShelf }) => {
         <ol className="books-grid">
           {searchResults.map((book) => (
             <li key={book.id}>
-              <Book book={book} updateBookShelf={updateBookShelf} />
+              <Book
+                book={book}
+                updateBookShelf={updateBookShelf}
+              />
             </li>
           ))}
         </ol>

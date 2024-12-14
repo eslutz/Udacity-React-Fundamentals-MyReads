@@ -1,4 +1,4 @@
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 /**
  * BookCover component that displays the cover of a book.
@@ -9,9 +9,9 @@ import PropTypes from "prop-types";
  *
  * @returns {JSX.Element} A div element displaying the book cover.
  */
-const BookCover = ({ imageLinks }) => {
+const BookCover = ({imageLinks}) => {
   // Get the thumbnail URL from the imageLinks object.
-  const thumbnail = imageLinks?.thumbnail ?? "";
+  const thumbnail = imageLinks?.thumbnail ?? '';
 
   // Style object for the book cover.
   const coverStyle = {
@@ -20,7 +20,12 @@ const BookCover = ({ imageLinks }) => {
     backgroundImage: `url("${thumbnail}")`,
   };
 
-  return <div className="book-cover" style={coverStyle}></div>;
+  return (
+    <div
+      className="book-cover"
+      style={coverStyle}
+    ></div>
+  );
 };
 
 BookCover.propTypes = {

@@ -1,11 +1,11 @@
-import { useState } from "react";
-import PropTypes from "prop-types";
-import BookCover from "./BookCover";
-import BookShelfPicker from "./BookShelfPicker";
+import {useState} from 'react';
+import PropTypes from 'prop-types';
+import BookCover from './BookCover';
+import BookShelfPicker from './BookShelfPicker';
 
-const DEFAULT_SHELF = "None";
-const DEFAULT_TITLE = "No Title Available";
-const DEFAULT_AUTHOR = "Unknown Author";
+const DEFAULT_SHELF = 'None';
+const DEFAULT_TITLE = 'No Title Available';
+const DEFAULT_AUTHOR = 'Unknown Author';
 
 /**
  * Book component that displays the book details.
@@ -20,13 +20,17 @@ const DEFAULT_AUTHOR = "Unknown Author";
  *
  * @returns {JSX.Element} The rendered book component.
  */
-const Book = ({ book, updateBookShelf }) => {
+const Book = ({book, updateBookShelf}) => {
   // Set the shelf of the book in the state.
   const [shelf, setShelf] = useState(book.shelf ?? DEFAULT_SHELF);
 
   const title = book.title ?? DEFAULT_TITLE;
   // Format the authors as a comma-separated list if there are multiple authors.
-  const authors = book.authors ? (book.authors.length > 1 ? book.authors.join(", ") : book.authors[0]) : DEFAULT_AUTHOR;
+  const authors = book.authors
+    ? book.authors.length > 1
+      ? book.authors.join(', ')
+      : book.authors[0]
+    : DEFAULT_AUTHOR;
 
   // Update the shelf of the book and set the new shelf in the state.
   const handleChangeShelf = (newBookShelf) => {
@@ -38,7 +42,10 @@ const Book = ({ book, updateBookShelf }) => {
     <div className="book">
       <div className="book-top">
         <BookCover imageLinks={book.imageLinks} />
-        <BookShelfPicker currentBookShelf={shelf} changeBookShelf={handleChangeShelf} />
+        <BookShelfPicker
+          currentBookShelf={shelf}
+          changeBookShelf={handleChangeShelf}
+        />
       </div>
       <div className="book-title">{title}</div>
       <div className="book-authors">{authors}</div>

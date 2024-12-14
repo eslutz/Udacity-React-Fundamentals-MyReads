@@ -1,9 +1,9 @@
-import "./App.css";
-import { useEffect, useState } from "react";
-import { Routes, Route } from "react-router-dom";
-import Bookcase from "./components/Bookcase";
-import Search from "./components/Search";
-import * as BooksAPI from "./utilities/BooksAPI";
+import './App.css';
+import {useEffect, useState} from 'react';
+import {Routes, Route} from 'react-router-dom';
+import Bookcase from './components/Bookcase';
+import Search from './components/Search';
+import * as BooksAPI from './utilities/BooksAPI';
 
 function App() {
   // State to store the books
@@ -30,7 +30,7 @@ function App() {
         const existingBook = prevBooks.find((b) => b.id === book.id);
         // Update the book shelf if it exists, otherwise add the book to the state.
         if (existingBook) {
-          return prevBooks.map((b) => (b.id === book.id ? { ...b, shelf } : b));
+          return prevBooks.map((b) => (b.id === book.id ? {...b, shelf} : b));
         } else {
           return [...prevBooks, book];
         }
@@ -38,14 +38,30 @@ function App() {
       // Update the book shelf on the server.
       await BooksAPI.update(book, shelf);
     } catch (error) {
-      console.error("Error updating book shelf:", error);
+      console.error('Error updating book shelf:', error);
     }
   };
 
   return (
     <Routes>
-      <Route path="/" element={<Bookcase books={books} updateBookShelf={updateBookShelf} />} />
-      <Route path="/search" element={<Search books={books} updateBookShelf={updateBookShelf} />} />
+      <Route
+        path="/"
+        element={
+          <Bookcase
+            books={books}
+            updateBookShelf={updateBookShelf}
+          />
+        }
+      />
+      <Route
+        path="/search"
+        element={
+          <Search
+            books={books}
+            updateBookShelf={updateBookShelf}
+          />
+        }
+      />
     </Routes>
   );
 }

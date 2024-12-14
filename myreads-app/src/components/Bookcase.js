@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
-import BookShelf from "./BookShelf";
+import {Link} from 'react-router-dom';
+import PropTypes from 'prop-types';
+import BookShelf from './BookShelf';
 
 /**
  * Bookcase component that displays books organized into different shelves.
@@ -11,12 +11,12 @@ import BookShelf from "./BookShelf";
  *
  * @returns {JSX.Element} The rendered Bookcase component.
  */
-const Bookcase = ({ books, updateBookShelf }) => {
+const Bookcase = ({books, updateBookShelf}) => {
   // Define the shelves.
   const shelves = [
-    { title: "Currently Reading", filter: "currentlyReading" },
-    { title: "Want to Read", filter: "wantToRead" },
-    { title: "Read", filter: "read" },
+    {title: 'Currently Reading', filter: 'currentlyReading'},
+    {title: 'Want to Read', filter: 'wantToRead'},
+    {title: 'Read', filter: 'read'},
   ];
 
   return (
@@ -29,7 +29,9 @@ const Bookcase = ({ books, updateBookShelf }) => {
           {
             // Map over the shelves and create a BookShelf component for each shelf with the filtered books.
             shelves.map((shelf) => {
-              const filteredBooks = books.filter((book) => book.shelf === shelf.filter);
+              const filteredBooks = books.filter(
+                (book) => book.shelf === shelf.filter,
+              );
               return (
                 <BookShelf
                   key={shelf.filter}
@@ -42,7 +44,10 @@ const Bookcase = ({ books, updateBookShelf }) => {
           }
         </div>
         <div className="open-search">
-          <Link to="/search" className="open-search-link">
+          <Link
+            to="/search"
+            className="open-search-link"
+          >
             Add a book
           </Link>
         </div>

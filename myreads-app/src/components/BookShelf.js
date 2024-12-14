@@ -1,5 +1,5 @@
-import PropTypes from "prop-types";
-import Book from "./Book";
+import PropTypes from 'prop-types';
+import Book from './Book';
 
 /**
  * Bookshelf component that displays the books on a shelf.
@@ -11,7 +11,7 @@ import Book from "./Book";
  *
  * @returns {JSX.Element} The rendered bookshelf component.
  */
-const BookShelf = ({ title, books, updateBookShelf }) => {
+const BookShelf = ({title, books, updateBookShelf}) => {
   return (
     <div className="bookshelf">
       <h2 className="bookshelf-title">{title}</h2>
@@ -19,7 +19,10 @@ const BookShelf = ({ title, books, updateBookShelf }) => {
         <ol className="books-grid">
           {books.map((book) => (
             <li key={book.id}>
-              <Book book={book} updateBookShelf={updateBookShelf} />
+              <Book
+                book={book}
+                updateBookShelf={updateBookShelf}
+              />
             </li>
           ))}
         </ol>

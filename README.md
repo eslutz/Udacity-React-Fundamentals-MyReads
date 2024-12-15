@@ -4,6 +4,8 @@ A bookshelf app that allows you to search for and categorize books you have read
 
 ## To Run This Project
 
+1. Clone this repository to your local machine
+1. Navigate to the project directory `cd myreads-app`
 1. Install all project dependencies with `npm install`
 1. Start the development server with `npm start`
 

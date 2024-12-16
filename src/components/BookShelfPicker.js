@@ -14,7 +14,7 @@ const BookShelfPicker = ({currentBookShelf, changeBookShelf}) => {
     <div className="book-shelf-changer">
       <select
         value={currentBookShelf}
-        onChange={(e) => changeBookShelf(e.target.value)}
+        onChange={e => changeBookShelf(e.target.value)}
       >
         <option
           value="moveTo"

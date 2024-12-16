@@ -28,9 +28,9 @@ const Bookcase = ({books, updateBookShelf}) => {
         <div className="list-books-content">
           {
             // Map over the shelves and create a BookShelf component for each shelf with the filtered books.
-            shelves.map((shelf) => {
+            shelves.map(shelf => {
               const filteredBooks = books.filter(
-                (book) => book.shelf === shelf.filter,
+                book => book.shelf === shelf.filter,
               );
               return (
                 <BookShelf

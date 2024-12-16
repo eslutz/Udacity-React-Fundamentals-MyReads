@@ -33,7 +33,7 @@ const Book = ({book, updateBookShelf}) => {
     : DEFAULT_AUTHOR;
 
   // Update the shelf of the book and set the new shelf in the state.
-  const handleChangeShelf = (newBookShelf) => {
+  const handleChangeShelf = newBookShelf => {
     setShelf(newBookShelf);
     updateBookShelf(book, newBookShelf);
   };

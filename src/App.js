@@ -25,12 +25,12 @@ function App() {
     try {
       // Update the book shelf in the state.
       book.shelf = shelf;
-      setBooks((prevBooks) => {
+      setBooks(prevBooks => {
         // Check if the book already exists in the state.
-        const existingBook = prevBooks.find((b) => b.id === book.id);
+        const existingBook = prevBooks.find(b => b.id === book.id);
         // Update the book shelf if it exists, otherwise add the book to the state.
         if (existingBook) {
-          return prevBooks.map((b) => (b.id === book.id ? {...b, shelf} : b));
+          return prevBooks.map(b => (b.id === book.id ? {...b, shelf} : b));
         } else {
           return [...prevBooks, book];
         }

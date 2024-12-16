@@ -19,10 +19,10 @@ const DEFAULT_AUTHOR = 'Unknown Author';
  * @returns {JSX.Element} The rendered book component.
  */
 const Book = ({book, updateBookShelf}) => {
-  // Set the title to a default values if it is not available.
+  // Set the title to a default value if the title is not available.
   const title = book.title ?? DEFAULT_TITLE;
-  // Format the authors as a comma-separated list if there are multiple authors.
-  // Otherwise, set the authors to a default value.
+  // Format the authors as a comma-separated list using join if there are multiple authors.
+  // Otherwise, set to single author or set to a default value if no author is available.
   const authors = book.authors
     ? book.authors.length > 1
       ? book.authors.join(', ')

@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
  * @returns {JSX.Element} A div element displaying the book cover.
  */
 const BookCover = ({imageLinks}) => {
-  // Get the thumbnail URL from the imageLinks object.
+  // Get the thumbnail URL from the imageLinks object or set to an empty string if not available.
   const thumbnail = imageLinks?.thumbnail ?? '';
 
   // Style object for the book cover.

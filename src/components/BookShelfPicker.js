@@ -5,11 +5,11 @@ import PropTypes from 'prop-types';
  *
  * @param {Object} props - The component props.
  * @param {Object} props.book - The current book.
- * @param {function} props.changeBookShelf - Function to change the bookshelf of the book.
+ * @param {function} props.updateBookShelf - Function to change the bookshelf of the book.
  *
  * @returns {JSX.Element} A div element displaying the shelf picker for a book.
  */
-const BookShelfPicker = ({book, changeBookShelf}) => {
+const BookShelfPicker = ({book, updateBookShelf}) => {
   // Update the shelf of the book.
   const handleChangeShelf = newBookShelf => {
     updateBookShelf(book, newBookShelf);
@@ -21,7 +21,7 @@ const BookShelfPicker = ({book, changeBookShelf}) => {
         id={`${book.id}-shelfPicker`}
         name="shelfPicker"
         value={book.shelf}
-        onChange={e => changeBookShelf(e.target.value)}
+        onChange={e => handleChangeShelf(e.target.value)}
       >
         <option
           value="moveTo"
@@ -40,7 +40,7 @@ const BookShelfPicker = ({book, changeBookShelf}) => {
 
 BookShelfPicker.propTypes = {
   book: PropTypes.object.isRequired,
-  changeBookShelf: PropTypes.func.isRequired,
+  updateBookShelf: PropTypes.func.isRequired,
 };
 
 export default BookShelfPicker;

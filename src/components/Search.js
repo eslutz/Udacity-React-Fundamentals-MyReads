@@ -8,7 +8,7 @@ import * as BooksAPI from '../utilities/BooksAPI';
  * Component for searching books and displaying search results.
  *
  * @param {Object} props - The component props.
- * @param {Object[]} props.books - Array of books currently in the library.
+ * @param {Object[]} props.books - Array of books currently on the bookcase.
  * @param {Function} props.updateBookShelf - Function to update the shelf of a book.
  *
  * @returns {JSX.Element} The search component.
@@ -70,13 +70,13 @@ const Search = ({books, updateBookShelf}) => {
           <input
             type="text"
             placeholder="Search by title, author, or ISBN"
-            onChange={(e) => setQuery(e.target.value)}
+            onChange={e => setQuery(e.target.value)}
           />
         </div>
       </div>
       <div className="search-books-results">
         <ol className="books-grid">
-          {searchResults.map((book) => (
+          {searchResults.map(book => (
             <li key={book.id}>
               <Book
                 book={book}

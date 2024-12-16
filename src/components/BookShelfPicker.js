@@ -4,16 +4,23 @@ import PropTypes from 'prop-types';
  * BookShelfPicker component that allows the selection of a shelf for a book.
  *
  * @param {Object} props - The component props.
- * @param {string} props.currentBookShelf - The current bookshelf of the book.
+ * @param {Object} props.book - The current book.
  * @param {function} props.changeBookShelf - Function to change the bookshelf of the book.
  *
  * @returns {JSX.Element} A div element displaying the shelf picker for a book.
  */
-const BookShelfPicker = ({currentBookShelf, changeBookShelf}) => {
+const BookShelfPicker = ({book, changeBookShelf}) => {
+  // Update the shelf of the book.
+  const handleChangeShelf = newBookShelf => {
+    updateBookShelf(book, newBookShelf);
+  };
+
   return (
     <div className="book-shelf-changer">
       <select
-        value={currentBookShelf}
+        id={`${book.id}-shelfPicker`}
+        name="shelfPicker"
+        value={book.shelf}
         onChange={e => changeBookShelf(e.target.value)}
       >
         <option
@@ -32,7 +39,7 @@ const BookShelfPicker = ({currentBookShelf, changeBookShelf}) => {
 };
 
 BookShelfPicker.propTypes = {
-  currentBookShelf: PropTypes.string.isRequired,
+  book: PropTypes.object.isRequired,
   changeBookShelf: PropTypes.func.isRequired,
 };
 

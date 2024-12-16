@@ -43,7 +43,7 @@ const Book = ({book, updateBookShelf}) => {
       <div className="book-top">
         <BookCover imageLinks={book.imageLinks} />
         <BookShelfPicker
-          currentBookShelf={shelf}
+          book={book}
           changeBookShelf={handleChangeShelf}
         />
       </div>

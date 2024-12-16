@@ -68,6 +68,7 @@ const Search = ({books, updateBookShelf}) => {
         </Link>
         <div className="search-books-input-wrapper">
           <input
+            id="searchBar"
             type="text"
             placeholder="Search by title, author, or ISBN"
             onChange={e => setQuery(e.target.value)}

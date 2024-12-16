@@ -17,7 +17,7 @@ const BookShelfPicker = ({currentBookShelf, changeBookShelf}) => {
         onChange={(e) => changeBookShelf(e.target.value)}
       >
         <option
-          value="none"
+          value="moveTo"
           disabled
         >
           Move to...
@@ -32,8 +32,8 @@ const BookShelfPicker = ({currentBookShelf, changeBookShelf}) => {
 };
 
 BookShelfPicker.propTypes = {
-  currentBookShelf: PropTypes.string,
-  changeBookShelf: PropTypes.func,
+  currentBookShelf: PropTypes.string.isRequired,
+  changeBookShelf: PropTypes.func.isRequired,
 };
 
 export default BookShelfPicker;

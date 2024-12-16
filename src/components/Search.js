@@ -24,23 +24,28 @@ const Search = ({books, updateBookShelf}) => {
       // If the query contains at least 2 characters, search for books.
       // Otherwise, clear the search results.
       if (query.length > 0) {
-        // Search for books using the Books API.
-        const searchResults = await BooksAPI.search(query, 10);
-        // If the search results contain an error, clear the search results.
-        if (searchResults.error) {
-          setSearchResults([]);
-          return;
-        }
-
         try {
-          // If a search result is already in the library, set its shelf to the shelf of the book.
-          searchResults.forEach((searchResult) => {
-            const book = books.find((book) => book.id === searchResult.id);
-            searchResult.shelf = book ? book.shelf : 'none';
+          // Search for books using the Books API.
+          const searchResults = await BooksAPI.search(query, 10);
+
+          // If the search results contain an error, clear the search results.
+          if (searchResults.error) {
+            setSearchResults([]);
+            return;
+          }
+
+          // If a search result is already in the bookcase, set its shelf to the shelf of the book.
+          // Otherwise, set the shelf to 'none'.
+          const updatedSearchResults = searchResults.map(searchBook => {
+            // Find the book on the bookcase that matches the search result.
+            const bookFound = books.find(book => book.id === searchBook.id);
+            searchBook.shelf = bookFound ? bookFound.shelf : 'none';
+
+            return searchBook;
           });
 
           // Set the search results.
-          setSearchResults(searchResults);
+          setSearchResults(updatedSearchResults);
         } catch (error) {
           console.error('Error fetching search results:', error);
         }

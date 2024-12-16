@@ -36,7 +36,7 @@ const Search = ({books, updateBookShelf}) => {
 
           // If a search result is already in the bookcase, set its shelf to the shelf of the book.
           // Otherwise, set the shelf to 'none'.
-          const updatedSearchResults = searchResults.map(searchBook => {
+          searchResults.map(searchBook => {
             // Find the book on the bookcase that matches the search result.
             const bookFound = books.find(book => book.id === searchBook.id);
             searchBook.shelf = bookFound ? bookFound.shelf : 'none';
@@ -45,7 +45,7 @@ const Search = ({books, updateBookShelf}) => {
           });
 
           // Set the search results.
-          setSearchResults(updatedSearchResults);
+          setSearchResults(searchResults);
         } catch (error) {
           console.error('Error fetching search results:', error);
         }

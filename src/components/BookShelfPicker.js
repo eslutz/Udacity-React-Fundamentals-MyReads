@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import shelves from '../utilities/Shelves';
 
 /**
  * BookShelfPicker component that allows the selection of a shelf for a book.
@@ -29,10 +30,19 @@ const BookShelfPicker = ({book, updateBookShelf}) => {
         >
           Move to...
         </option>
-        <option value="currentlyReading">Currently Reading</option>
-        <option value="wantToRead">Want to Read</option>
-        <option value="read">Read</option>
-        <option value="none">None</option>
+        {
+          // Map over the shelves and create an option for each shelf.
+          shelves.map(shelf => {
+            return (
+              <option
+                key={shelf.id}
+                value={shelf.value}
+              >
+                {shelf.title}
+              </option>
+            );
+          })
+        }
       </select>
     </div>
   );

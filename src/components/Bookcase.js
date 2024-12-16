@@ -1,6 +1,7 @@
 import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import BookShelf from './BookShelf';
+import shelves from '../utilities/Shelves';
 
 /**
  * Bookcase component that displays books organized into different shelves.
@@ -12,13 +13,6 @@ import BookShelf from './BookShelf';
  * @returns {JSX.Element} The rendered Bookcase component.
  */
 const Bookcase = ({books, updateBookShelf}) => {
-  // Define the shelves.
-  const shelves = [
-    {title: 'Currently Reading', filter: 'currentlyReading'},
-    {title: 'Want to Read', filter: 'wantToRead'},
-    {title: 'Read', filter: 'read'},
-  ];
-
   return (
     <div className="app">
       <div className="list-books">
@@ -27,20 +21,22 @@ const Bookcase = ({books, updateBookShelf}) => {
         </div>
         <div className="list-books-content">
           {
-            // Map over the shelves and create a BookShelf component for each shelf with the filtered books.
-            shelves.map(shelf => {
-              const filteredBooks = books.filter(
-                book => book.shelf === shelf.filter,
-              );
-              return (
-                <BookShelf
-                  key={shelf.filter}
-                  title={shelf.title}
-                  books={filteredBooks}
-                  updateBookShelf={updateBookShelf}
-                />
-              );
-            })
+            // Map over the shelves, excluding the "None" shelf, and create a BookShelf component for each shelf with the filtered books.
+            shelves
+              .filter(shelf => shelf.value !== 'none')
+              .map(shelf => {
+                const filteredBooks = books.filter(
+                  book => book.shelf === shelf.value,
+                );
+                return (
+                  <BookShelf
+                    key={shelf.id}
+                    title={shelf.title}
+                    books={filteredBooks}
+                    updateBookShelf={updateBookShelf}
+                  />
+                );
+              })
           }
         </div>
         <div className="open-search">

@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/Udacity-React-Fundamentals-MyReads/static/css/main.bf3ebdcd.css",
-    "main.js": "/Udacity-React-Fundamentals-MyReads/static/js/main.770e7898.js",
+    "main.js": "/Udacity-React-Fundamentals-MyReads/static/js/main.270479bc.js",
     "index.html": "/Udacity-React-Fundamentals-MyReads/index.html",
     "static/media/arrow-back.svg": "/Udacity-React-Fundamentals-MyReads/static/media/arrow-back.cd079cab42defead9875.svg",
     "static/media/add.svg": "/Udacity-React-Fundamentals-MyReads/static/media/add.1b5d9b6afb5557f7992c.svg",
     "static/media/arrow-drop-down.svg": "/Udacity-React-Fundamentals-MyReads/static/media/arrow-drop-down.4378492a3a09dbfc31ff.svg",
     "main.bf3ebdcd.css.map": "/Udacity-React-Fundamentals-MyReads/static/css/main.bf3ebdcd.css.map",
-    "main.770e7898.js.map": "/Udacity-React-Fundamentals-MyReads/static/js/main.770e7898.js.map"
+    "main.270479bc.js.map": "/Udacity-React-Fundamentals-MyReads/static/js/main.270479bc.js.map"
   },
   "entrypoints": [
     "static/css/main.bf3ebdcd.css",
-    "static/js/main.770e7898.js"
+    "static/js/main.270479bc.js"
   ]
 }

@@ -1,6 +1,6 @@
 {
   "name": "myreads",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A bookshelf app that allows you to search for and categorize books you have read, are currently reading, or want to read.",
   "keywords": [
     "udacity",
@@ -9,6 +9,7 @@
   ],
   "private": true,
   "author": "Eric Slutz",
+  "homepage": "https://eslutz.github.io/Udacity-React-Fundamentals-MyReads",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/eslutz/Udacity-React-Fundamentals-MyReads.git"
@@ -18,14 +19,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build"
-  },
-  "dependencies": {
-    "prop-types": "^15.8.1",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-router-dom": "^7.0.2",
-    "react-scripts": "5.0.1"
+    "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -46,5 +42,15 @@
   },
   "engines": {
     "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "prop-types": "^15.8.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.0.2",
+    "react-scripts": "5.0.1"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.2.0"
   }
 }

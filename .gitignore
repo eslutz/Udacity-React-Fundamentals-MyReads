@@ -187,6 +187,9 @@ psd
 thumb
 sketch
 
+# create-react-app
+build
+
 ### VisualStudioCode ###
 .vscode/*
 !.vscode/settings.json
